@@ -1,7 +1,7 @@
 # Github informations
 enableGithub = True
 author = "Ted-18"
-repository = "JoinRole"
+repository = "Bot.Assistant-JoinRole"
 version = "1.0.0"
 
 # To activate this addon
