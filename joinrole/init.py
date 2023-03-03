@@ -5,7 +5,7 @@ repository = "Bot.Assistant-JoinRole"
 version = "1.0.0"
 
 # To activate this addon
-cogEnabled = False
+cogEnabled = True
 
 # Name of the addon
 cogName = "joinrole"
