@@ -1,13 +1,13 @@
 # █▀█ █▄░█   █▀▄▀█ █▀▀ █▀▄▀█ █▄▄ █▀▀ █▀█   ░░█ █▀█ █ █▄░█
 # █▄█ █░▀█   █░▀░█ ██▄ █░▀░█ █▄█ ██▄ █▀▄   █▄█ █▄█ █ █░▀█
-import addons.joinrole.functions.commands.commandAdd as funcAdd
-import addons.joinrole.functions.commands.commandDelete as funcDelete
-import addons.joinrole.functions.commands.commandList as funcList
-import addons.joinrole.functions.events.eventOnMemberJoin as funcEventOnMemberJoin
+import addons.JoinRole.functions.commands.commandAdd as funcAdd
+import addons.JoinRole.functions.commands.commandDelete as funcDelete
+import addons.JoinRole.functions.commands.commandList as funcList
+import addons.JoinRole.functions.events.eventOnMemberJoin as funcEventOnMemberJoin
 
-import addons.joinrole.handlers.handlerDatabaseInit as handlerDatabaseInit
+import addons.JoinRole.handlers.handlerDatabaseInit as handlerDatabaseInit
 
-import addons.joinrole.init as init
+import addons.JoinRole.init as init
 
 from services.serviceLogger import consoleLogger as Logger
 import services.servicePermissionCheck as servicePermissionCheck

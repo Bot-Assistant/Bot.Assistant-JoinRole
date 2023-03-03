@@ -1,4 +1,4 @@
-import addons.joinrole.handlers.handlerJoinRole as handlerJoinRole
+import addons.JoinRole.handlers.handlerJoinRole as handlerJoinRole
 import services.serviceBot as serviceBot
 import services.serviceDiscordLogger as serviceDiscordLogger
 
