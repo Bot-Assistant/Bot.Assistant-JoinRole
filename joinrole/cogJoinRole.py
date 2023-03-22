@@ -1,5 +1,6 @@
 # █▀█ █▄░█   █▀▄▀█ █▀▀ █▀▄▀█ █▄▄ █▀▀ █▀█   ░░█ █▀█ █ █▄░█
 # █▄█ █░▀█   █░▀░█ ██▄ █░▀░█ █▄█ ██▄ █▀▄   █▄█ █▄█ █ █░▀█
+import addons.JoinRole.functions.commands.commandRequirements as commandRequirements
 import addons.JoinRole.functions.commands.commandAdd as funcAdd
 import addons.JoinRole.functions.commands.commandDelete as funcDelete
 import addons.JoinRole.functions.commands.commandList as funcList
@@ -7,10 +8,8 @@ import addons.JoinRole.functions.events.eventOnMemberJoin as funcEventOnMemberJo
 
 import addons.JoinRole.handlers.handlerDatabaseInit as handlerDatabaseInit
 
-import addons.JoinRole.init as init
-
 from services.serviceLogger import consoleLogger as Logger
-import services.servicePermissionCheck as servicePermissionCheck
+
 from settings.settingBot import debug
 
 # INIT BOT VARIABLES
@@ -33,10 +32,10 @@ class JoinRole(commands.Cog):
 
     groupJoinRole = discordCommands.SlashCommandGroup("joinrole", "Various commands to manage join role")
 
-    # Verify if the bot has the permissions
-    @groupJoinRole.command(name="permissions", description="Check the permissions of the bot")
-    async def cmdSFXPermissions(self, ctx: commands.Context):
-        await servicePermissionCheck.permissionCheck(ctx, init.addonPermissions)
+    # Verify if the bot has the prerequisites permissions
+    @groupJoinRole.command(name="requirements", description="Check the prerequisites permissions of the addon.")
+    async def cmdPermissions(self, ctx: commands.Context):
+        await commandRequirements.checkRequirements(ctx)
 
     #t ADD
     @groupJoinRole.command(name="add", description="Command to define the roles when users arrive.")
