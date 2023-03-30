@@ -1,7 +1,6 @@
 import addons.JoinRole.handlers.handlerJoinRole as handlerJoinRole
 
 import services.serviceBot as serviceBot
-import services.serviceDiscordLogger as serviceDiscordLogger   
 
 import settings.settingColors as settingColors
 import settings.settingThumbnail as settingThumbnail    
@@ -28,6 +27,3 @@ async def list(ctx):
     else:
         embed.add_field(name="No roles configured", value="Type the command /joinrole add to add roles to users who join the Discord.", inline=False)
     message = await ctx.respond(embed=embed)
-    
-    #Logs
-    await serviceDiscordLogger.discordLogger.info("The list of join roles has been requested by  " + ctx.author.name, ctx.guild.id)

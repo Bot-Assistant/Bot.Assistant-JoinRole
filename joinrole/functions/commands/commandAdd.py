@@ -1,7 +1,6 @@
 import addons.JoinRole.handlers.handlerJoinRole as handlerJoinRole
 
 import services.serviceBot as serviceBot
-import services.serviceDiscordLogger as serviceDiscordLogger
 
 import settings.settingColors as settingColors
 import settings.settingThumbnail as settingThumbnail      
@@ -21,7 +20,3 @@ async def add(ctx, role):
     embed = serviceBot.classBot.getDiscord().Embed(title="Join Role", description="New join role added: " + role.name, color=settingColors.green)
     embed.set_thumbnail(url=settingThumbnail.membersIcons)
     await ctx.respond(embed=embed)
-    
-    #Logs
-    await serviceDiscordLogger.discordLogger.warn("A new join role has been added by " + ctx.author.name + " -> " + role.name, ctx.guild.id)
- 

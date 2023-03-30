@@ -1,7 +1,8 @@
 import addons.JoinRole.handlers.handlerJoinRole as handlerJoinRole
-import services.serviceBot as serviceBot
 import services.serviceDiscordLogger as serviceDiscordLogger
 
+import services.serviceBot as serviceBot
+discord = serviceBot.classBot.getDiscord()
 
 async def onMemberJoin(member):
     # Get join role list
@@ -9,8 +10,7 @@ async def onMemberJoin(member):
         
         if joinRoleList != None:
             for role in joinRoleList:
-                joinRole = serviceBot.classBot.getDiscord().utils.get(member.guild.roles, id=role[0])
+
+                joinRole = discord.utils.get(member.guild.roles, id=role[0])
+
                 await member.add_roles(joinRole)
-                
-                #Logs
-                await serviceDiscordLogger.discordLogger.info("A new player has join the server, roles added to " + member.name, member.guild.id)
