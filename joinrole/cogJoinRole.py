@@ -1,5 +1,5 @@
 # ADDON IMPORTS
-import addons.Configuration.init as init
+import addons.JoinRole.init as init
 
 import addons.JoinRole.functions.commands.commandRequirements as commandRequirements
 import addons.JoinRole.functions.commands.commandAdd as commandAdd
@@ -82,7 +82,7 @@ class JoinRole(commands.Cog):
 
 
 def setup(bot):
-    if debug: Logger.debug("Loading Join Role")
+    if debug: Logger.debug("Loading cog: " + init.cogName)
     handlerDatabaseInit.databaseInit()
     bot.add_cog(JoinRole(bot))
     
