@@ -34,7 +34,7 @@ class JoinRole(commands.Cog):
         await eventOnMemberJoin.onMemberJoin(member)
     
 
-    groupJoinRole = discordCommands.SlashCommandGroup("joinrole", "Various commands to manage join role")
+    groupJoinRole = discordCommands.SlashCommandGroup("joinrole", "🔶 Group of commands to manage the join role addon.")
 
     # Verify if the bot has the prerequisites permissions
     @groupJoinRole.command(name="requirements", description="Check the prerequisites permissions of the addon.")
