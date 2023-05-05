@@ -1,5 +1,5 @@
 import services.serviceDatabase as serviceDatabase      
-from services.serviceLogger import consoleLogger as Logger
+from services.serviceLogger import Logger
 
 from settings.settingBot import debug
 
@@ -11,8 +11,7 @@ def addRole(serverID, roleID):
                     """
     requestSettings = (serverID, roleID,)
     try:
-        if debug == True:
-            Logger.debug("[HANDLER][JOINROLE][ADD] Adding a role to the DB " + str(serverID) + " " + str(roleID))
+        Logger.debug("[HANDLER][JOINROLE][ADD] Adding a role to the DB " + str(serverID) + " " + str(roleID))
             
         serviceDatabase.makeRequest(requestFormat, requestSettings)
         
@@ -27,8 +26,7 @@ def deleteRole(serverID, roleID):
                     """
     requestSettings = (serverID, roleID,)
     try:
-        if debug == True:
-            Logger.debug("[HANDLER][JOINROLE][DELETE] Deleting a role from the DB " + str(roleID))
+        Logger.debug("[HANDLER][JOINROLE][DELETE] Deleting a role from the DB " + str(roleID))
             
         serviceDatabase.makeRequest(requestFormat, requestSettings)
         
@@ -46,8 +44,7 @@ def listRole(serverID):
     try:
         result = serviceDatabase.getInfoRequest(requestFormat, requestSettings)
 
-        if debug == True:
-            Logger.debug("[HANDLER][JOINROLE][LIST] Retrieving the list of join roles -> " + str(result))
+        Logger.debug("[HANDLER][JOINROLE][LIST] Retrieving the list of join roles -> " + str(result))
             
         return result
     

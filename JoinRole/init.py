@@ -2,7 +2,7 @@
 enableGithub = True
 author = "Ted-18"
 repository = "Bot.Assistant-JoinRole"
-version = "1.1.6"
+version = "1.1.7"
 
 # To activate this addon
 cogEnabled = True
